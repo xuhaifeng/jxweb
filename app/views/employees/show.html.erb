@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>姓名:</b>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <b>性别:</b>
+  <%= @employee.gender %>
+</p>
+
+<p>
+  <b>职位:</b>
+  <%= @employee.title %>
+</p>
+
+<p>
+  <b>出生日期:</b>
+  <%= @employee.birth %>
+</p>
+
+<p>
+  <b>工作网点:</b>
+  <%= @employee.site.name %>
+</p>
+
+
+<%= link_to '更改', edit_employee_path(@employee) %> |
+<%= link_to '返回', employees_path %>

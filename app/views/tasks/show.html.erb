@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>所属网点:</b>
+  <%= @task.customer_id %>
+</p>
+
+<p>
+  <b>顾客:</b>
+  <%= @task.customer_id %>
+</p>
+
+<p>
+  <b>园丁:</b>
+  <%= @task.employee_id %>
+</p>
+
+<p>
+  <b>起始时间:</b>
+  <%= @task.start_time %>
+</p>
+
+<p>
+  <b>结束时间:</b>
+  <%= @task.end_time %>
+</p>
+
+<p>
+  <b>养护内容和完成情况:</b>
+  <%= @task.remarks %>
+</p>
+
+<p>
+  <b>已调度:</b>
+  <%= @task.planned %>
+</p>
+
+<p>
+  <b>已派工:</b>
+  <%= @task.dispatched %>
+</p>
+
+<p>
+  <b>完成:</b>
+  <%= @task.finished %>
+</p>
+
+<p>
+  <b>养护质量评分:</b>
+  <%= @task.score %>
+</p>
+
+<p>
+  <b>客户确认:</b>
+  <%= @task.verified %>
+</p>
+
+<%= link_to '更改', edit_task_path(@task) %> |
+<%= link_to '返回', tasks_path %>

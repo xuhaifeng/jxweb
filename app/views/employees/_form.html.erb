@@ -1,0 +1,41 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "姓名" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "性别" %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label "职位" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "出生日期" %><br />
+    <%= f.date_select :birth ,:start_year => 1940, :use_month_numbers => true%>
+  </div>
+  <div class="field">
+    <%= f.label "工作网点" %><br />
+    <% if current_user.site_id.nil? %>
+       <%= f.select(:site_id, options_from_collection_for_select(Site.all,:id,:name))%>
+    <% else %>
+       <%= f.select(:site_id, options_from_collection_for_select(Site.where(:id => current_user.site_id),:id,:name))%>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交"%>
+  </div>
+<% end %>

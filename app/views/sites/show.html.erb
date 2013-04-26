@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>网点名称:</b>
+  <%= @site.name %>
+</p>
+
+<p>
+  <b>网点地址:</b>
+  <%= @site.address %>
+</p>
+
+
+<%= link_to '更改', edit_site_path(@site) %> |
+<%= link_to '返回', sites_path %>

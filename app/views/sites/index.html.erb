@@ -1,0 +1,23 @@
+<h2>网点列表</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>网点名称</th>
+    <th>网点地址</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sites.each do |site| %>
+  <tr>
+    <td><%= site.name %></td>
+    <td><%= site.address %></td>
+    <td><%= link_to '更改', edit_site_path(site) %></td>
+    <td><%= link_to '删除', site, method: :delete, data: { confirm: '你确认吗?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建养护网点', new_site_path %>

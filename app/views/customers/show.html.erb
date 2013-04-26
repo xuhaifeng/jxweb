@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>姓名:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>电话:</b>
+  <%= @customer.tel %>
+</p>
+
+<p>
+  <b>手机号码:</b>
+  <%= @customer.mobile %>
+</p>
+
+<p>
+  <b>电子邮件:</b>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <b>地址:</b>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <b>花园面积:</b>
+  <%= @customer.squre %>
+</p>
+
+<p>
+  <b>居住人数:</b>
+  <%= @customer.headcount %>
+</p>
+
+<p>
+  <b>工作单位:</b>
+  <%= @customer.company %>
+</p>
+
+<p>
+  <b>工作类型:</b>
+  <%= @customer.job_type %>
+</p>
+
+<p>
+  <b>兴趣爱好:</b>
+  <%= @customer.interests %>
+</p>
+
+<p>
+  <b>服务类别:</b>
+  <%= @customer.service_type %>
+</p>
+
+<p>
+  <b>备注:</b>
+  <%= @customer.remark %>
+</p>
+
+<p>
+  <b>所属网点:</b>
+  <%= @customer.site.name %>
+</p>
+
+
+<%= link_to '更改', edit_customer_path(@customer) %> |
+<%= link_to '返回', customers_path %>

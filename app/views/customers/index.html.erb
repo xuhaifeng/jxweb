@@ -1,0 +1,45 @@
+<h2>客户列表</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>姓名</th>
+    <th>电话</th>
+    <th>手机号码</th>
+    <th>电子邮件</th>
+    <th>地址</th>
+    <th>花园面积</th>
+    <th>居住人数</th>
+    <th>工作单位</th>
+    <th>工作类型</th>
+    <th>兴趣爱好</th>
+    <th>服务类别</th>
+    <th>备注</th>
+    <th>所属网点</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.tel %></td>
+    <td><%= customer.mobile %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.squre %></td>
+    <td><%= customer.headcount %></td>
+    <td><%= customer.company %></td>
+    <td><%= customer.job_type %></td>
+    <td><%= customer.interests %></td>
+    <td><%= customer.service_type %></td>
+    <td><%= customer.remark %></td>
+    <td><%= customer.site.name %></td>
+    <td><%= link_to '更改', edit_customer_path(customer) %></td>
+    <td><%= link_to '删除', customer, method: :delete, data: { confirm: '你确认吗?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建客户', new_customer_path %>

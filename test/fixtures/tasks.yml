@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  employee_id: 1
+  start_time: 2013-04-11 20:19:11
+  end_time: 2013-04-11 20:19:11
+  job_id: 1
+  score: 1
+  verified: false
+  planned: false
+  dispatched: false
+  finished: false
+  remarks: MyText
+
+two:
+  customer_id: 1
+  employee_id: 1
+  start_time: 2013-04-11 20:19:11
+  end_time: 2013-04-11 20:19:11
+  job_id: 1
+  score: 1
+  verified: false
+  planned: false
+  dispatched: false
+  finished: false
+  remarks: MyText

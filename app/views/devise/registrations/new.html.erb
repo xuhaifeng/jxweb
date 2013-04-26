@@ -1,0 +1,17 @@
+<h2>新建用户</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label '电子邮件地址' %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label '密码' %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label '确认密码' %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "新建" %></div>
+<% end %>
+

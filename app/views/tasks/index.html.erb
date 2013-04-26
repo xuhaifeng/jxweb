@@ -1,0 +1,44 @@
+<h2>养护调度派工日报</h2>
+<%= form_tag( '/tasks', :method => "get",  :class => 'form-inline') do %>
+    <%= text_field_tag :start_datetime, nil %>
+    <%= submit_tag '搜索' %>
+<% end %>
+<table class="table table-striped">
+  <tr>
+    <th>所属网点</th>
+    <th>客户</th>
+    <th>园丁</th>
+    <th>起始时间</th>
+    <th>结束时间</th>
+    <th>养护内容和完成情况</th>
+    <th>已调度</th>
+    <th>已派工</th>
+    <th>完成</th>
+    <th>养护质量评分</th>
+    <th>客户确认</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.site.name %></td>
+    <td><%= task.customer.address %></td>
+    <td><%= task.employee.name %></td>
+    <td><%= task.start_time %></td>
+    <td><%= task.end_time %></td>
+    <td><%= task.remarks %></td>
+    <td><%= task.planned %></td>
+    <td><%= task.dispatched %></td>
+    <td><%= task.finished %></td>
+    <td><%= task.score %></td>
+    <td><%= task.verified %></td>
+    <td><%= link_to '更改', edit_task_path(task) %></td>
+    <td><%= link_to '删除', task, method: :delete, data: { confirm: '你确认吗?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建调度计划工单', new_task_path %>
