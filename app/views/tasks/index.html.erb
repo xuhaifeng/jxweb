@@ -1,5 +1,6 @@
 <h2>养护调度派工日报</h2>
 <%= form_tag( '/tasks', :method => "get",  :class => 'form-inline') do %>
+    <%= label_tag "请输入起始查询时间（例如 2013-04-12 07:52:00 ）：" %>
     <%= text_field_tag :start_datetime, nil %>
     <%= submit_tag '搜索' %>
 <% end %>

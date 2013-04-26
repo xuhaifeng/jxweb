@@ -37,11 +37,11 @@
   </div>
   <div class="field">
     <%= f.label "起始时间" %><br />
-    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :start_time,:use_month_numbers => true %>
   </div>
   <div class="field">
     <%= f.label "结束时间" %><br />
-    <%= f.datetime_select :end_time %>
+    <%= f.datetime_select :end_time,:use_month_numbers => true %>
   </div>
   <div class="field">
     <%= f.label "养护内容和完成情况" %><br />
